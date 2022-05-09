@@ -16,6 +16,7 @@ import java.util.Optional;
 public class CidWebProperties {
     private final String cidHeader;
     private final Boolean useRequestHeader;
+    private final MdcProperties mdc;
     private final RegistrationBean registrationBean;
 
     /**
@@ -24,12 +25,20 @@ public class CidWebProperties {
      * @param cidHeader the name to use for the correlation ID header.
      * @param useRequestHeader flag to determine whether the {@link com.spt.development.cid.CorrelationId} should be
      *                         initialized from the correlation ID request header if it exists.
+     * @param mdc object encapsulating the spt.cid.web.mdc properties.
      * @param registrationBean object encapsulating the spt.cid.web properties related to the
+     *                         {@link com.spt.development.cid.web.filter.CorrelationIdFilter},
      *                         {@link org.springframework.boot.web.servlet.FilterRegistrationBean}.
      */
-    public CidWebProperties(final String cidHeader, final Boolean useRequestHeader, final RegistrationBean registrationBean) {
+    public CidWebProperties(
+            final String cidHeader,
+            final Boolean useRequestHeader,
+            final MdcProperties mdc,
+            final RegistrationBean registrationBean) {
+
         this.cidHeader = cidHeader;
         this.useRequestHeader = useRequestHeader;
+        this.mdc = Optional.ofNullable(mdc).orElse(new MdcProperties(null));
         this.registrationBean = Optional.ofNullable(registrationBean).orElse(new RegistrationBean(null, null, null));
     }
 
@@ -53,6 +62,15 @@ public class CidWebProperties {
     }
 
     /**
+     * An object encapsulating the spt.cid.web.mdc properties.
+     *
+     * @return the MDC properties.
+     */
+    public MdcProperties getMdc() {
+        return mdc;
+    }
+
+    /**
      * An object encapsulating the spt.cid.web properties related to the
      * {@link org.springframework.boot.web.servlet.FilterRegistrationBean}.
      *
@@ -63,9 +81,36 @@ public class CidWebProperties {
     }
 
     /**
-     * Configuration properties for
-     * <a href="https://github.com/spt-development/spt-development-cid-web">spt-development/spt-development-cid-web</a>,
-     * relating to the {@link org.springframework.boot.web.servlet.FilterRegistrationBean}.
+     * Configuration properties for the spt.cid.web.mdc properties.
+     */
+    public static class MdcProperties {
+        private final RegistrationBean registrationBean;
+
+        /**
+         * Creates an object to encapsulate the spt.cid.web.mdc properties.
+         *
+         * @param registrationBean object encapsulating the spt.cid.web.mdc properties related to the
+         *                         {@link com.spt.development.cid.web.filter.MdcCorrelationIdFilter},
+         *                         {@link org.springframework.boot.web.servlet.FilterRegistrationBean}.
+         */
+        public MdcProperties(final RegistrationBean registrationBean) {
+            this.registrationBean = Optional.ofNullable(registrationBean)
+                    .orElse(new RegistrationBean(null, null, null));
+        }
+
+        /**
+         * An object encapsulating the spt.cid.web.mdc properties related to the
+         * {@link org.springframework.boot.web.servlet.FilterRegistrationBean}.
+         *
+         * @return the registration bean properties.
+         */
+        public RegistrationBean getBean() {
+            return registrationBean;
+        }
+    }
+
+    /**
+     * Configuration properties for {@link org.springframework.boot.web.servlet.FilterRegistrationBean}.
      */
     public static class RegistrationBean {
         private final String name;

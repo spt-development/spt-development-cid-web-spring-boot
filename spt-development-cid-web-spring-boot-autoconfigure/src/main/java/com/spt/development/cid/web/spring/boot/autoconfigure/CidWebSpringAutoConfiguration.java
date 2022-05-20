@@ -1,14 +1,13 @@
 package com.spt.development.cid.web.spring.boot.autoconfigure;
 
 import com.spt.development.cid.web.filter.CorrelationIdFilter;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 
 import javax.servlet.Servlet;
@@ -19,15 +18,14 @@ import java.util.Optional;
 import static com.spt.development.cid.web.filter.CorrelationIdFilter.CID_HEADER;
 
 /**
- * {@link org.springframework.boot.autoconfigure.EnableAutoConfiguration Auto-Configuration} for
+ * {@link AutoConfiguration Auto-Configuration} for
  * <a href="https://github.com/spt-development/spt-development-cid-web">spt-development/spt-development-cid-web</a>.
  */
-@Configuration
+@AutoConfiguration(after = WebMvcAutoConfiguration.class)
 @ConditionalOnWebApplication(
         type = ConditionalOnWebApplication.Type.SERVLET
 )
 @ConditionalOnClass({ Servlet.class })
-@AutoConfigureAfter(WebMvcAutoConfiguration.class)
 @EnableConfigurationProperties(CidWebProperties.class)
 public class CidWebSpringAutoConfiguration {
     static final List<String> DEFAULT_URL_PATTERNS = Collections.singletonList("/*");

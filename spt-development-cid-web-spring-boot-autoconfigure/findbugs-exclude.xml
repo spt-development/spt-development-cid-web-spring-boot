@@ -1,2 +1,8 @@
 <FindBugsFilter>
+    <!-- False positive - the constructor creates an unmodifiable list -->
+    <Match>
+        <Class name="com.spt.development.cid.web.spring.boot.autoconfigure.CidWebProperties$RegistrationBean" />
+        <Method name="getUrlPatterns" />
+        <Bug pattern="EI_EXPOSE_REP" />
+    </Match>
 </FindBugsFilter>

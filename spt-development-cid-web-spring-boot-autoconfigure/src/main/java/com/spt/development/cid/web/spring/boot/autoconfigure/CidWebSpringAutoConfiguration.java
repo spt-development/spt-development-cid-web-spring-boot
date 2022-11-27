@@ -2,6 +2,7 @@ package com.spt.development.cid.web.spring.boot.autoconfigure;
 
 import com.spt.development.cid.web.filter.CorrelationIdFilter;
 import com.spt.development.cid.web.filter.MdcCorrelationIdFilter;
+import jakarta.servlet.Servlet;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -13,7 +14,6 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.Ordered;
 
-import javax.servlet.Servlet;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;

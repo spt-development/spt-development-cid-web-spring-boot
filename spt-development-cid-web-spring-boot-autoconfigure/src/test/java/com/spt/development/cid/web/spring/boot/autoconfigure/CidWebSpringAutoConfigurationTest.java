@@ -1,5 +1,6 @@
 package com.spt.development.cid.web.spring.boot.autoconfigure;
 
+import jakarta.servlet.Filter;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -12,7 +13,6 @@ import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebAp
 import org.springframework.core.Ordered;
 import org.springframework.test.util.ReflectionTestUtils;
 
-import javax.servlet.Filter;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;

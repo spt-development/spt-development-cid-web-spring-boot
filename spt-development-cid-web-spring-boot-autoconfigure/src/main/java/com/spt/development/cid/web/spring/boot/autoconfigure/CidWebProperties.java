@@ -1,7 +1,6 @@
 package com.spt.development.cid.web.spring.boot.autoconfigure;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.ConstructorBinding;
 
 import java.util.Collections;
 import java.util.List;
@@ -11,7 +10,6 @@ import java.util.Optional;
  * Configuration properties for
  * <a href="https://github.com/spt-development/spt-development-cid-web">spt-development/spt-development-cid-web</a>.
  */
-@ConstructorBinding
 @ConfigurationProperties(prefix = "spt.cid.web")
 public class CidWebProperties {
     private final String cidHeader;

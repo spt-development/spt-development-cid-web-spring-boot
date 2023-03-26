@@ -3,7 +3,7 @@
 
     <groupId>com.spt-development</groupId>
     <artifactId>spt-development-cid-web-spring-boot</artifactId>
-    <version>3.0.4-SNAPSHOT</version>
+    <version>3.0.5-SNAPSHOT</version>
 
     <name>cid-web-spring-boot</name>
     <description>Library for integrating spt-development/spt-development-cid-web into a Spring Boot application.</description>
@@ -37,9 +37,9 @@
         <maven.compiler.release>17</maven.compiler.release>
 
         <!-- Dependency versions -->
-        <spring-boot.version>3.0.3</spring-boot.version>
+        <spring-boot.version>3.0.5</spring-boot.version>
         <spt-cid.version>2.0.11</spt-cid.version>
-        <spt-cid-web.version>2.0.7</spt-cid-web.version>
+        <spt-cid-web.version>2.0.8</spt-cid-web.version>
 
         <!-- Plugin versions -->
         <checkstyle-maven-plugin.version>3.1.2</checkstyle-maven-plugin.version>
@@ -60,7 +60,7 @@
         <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
 
         <!-- Plugin dependencies -->
-        <asm.version>9.3</asm.version>
+        <asm.version>9.5</asm.version>
         <checkstyle.version>9.0.1</checkstyle.version>
         <maven-dependency-analyzer.version>1.12.0</maven-dependency-analyzer.version>
         <pitest-junit5-plugin.version>0.15</pitest-junit5-plugin.version>

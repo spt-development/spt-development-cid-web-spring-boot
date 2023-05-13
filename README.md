@@ -19,19 +19,23 @@ Usage
 
 Simply add the Spring Boot starter to your Spring Boot project pom.
 
-    <dependency>
-        <groupId>com.spt-development</groupId>
-        <artifactId>spt-development-cid-web-spring-boot-starter</artifactId>
-        <version>1.0.0</version>
-        <scope>runtime</scope>
-    </dependency
+```xml
+<dependency>
+    <groupId>com.spt-development</groupId>
+    <artifactId>spt-development-cid-web-spring-boot-starter</artifactId>
+    <version>1.0.0</version>
+    <scope>runtime</scope>
+</dependency>
+```
 
 Building locally
 ================
 
 To build the library, run the following maven command:
 
-    $ mvn clean install
+```shell
+$ mvn clean install
+```
 
 Release
 =======

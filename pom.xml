@@ -37,9 +37,9 @@
         <maven.compiler.release>17</maven.compiler.release>
 
         <!-- Dependency versions -->
-        <spring-boot.version>3.1.0</spring-boot.version>
+        <spring-boot.version>3.1.1</spring-boot.version>
         <spt-cid.version>2.0.11</spt-cid.version>
-        <spt-cid-web.version>2.0.9</spt-cid-web.version>
+        <spt-cid-web.version>2.0.10</spt-cid-web.version>
 
         <!-- Plugin versions -->
         <checkstyle-maven-plugin.version>3.1.2</checkstyle-maven-plugin.version>

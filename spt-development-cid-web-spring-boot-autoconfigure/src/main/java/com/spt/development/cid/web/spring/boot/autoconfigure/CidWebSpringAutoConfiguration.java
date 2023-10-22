@@ -64,9 +64,9 @@ public class CidWebSpringAutoConfiguration {
         }
         filterRegBean.setOrder(Optional.ofNullable(cidWebProperties.getBean().getOrder()).orElse(Ordered.HIGHEST_PRECEDENCE));
         filterRegBean.setUrlPatterns(
-                cidWebProperties.getBean().getUrlPatterns().isEmpty() ?
-                        DEFAULT_URL_PATTERNS :
-                        cidWebProperties.getBean().getUrlPatterns()
+                cidWebProperties.getBean().getUrlPatterns().isEmpty()
+                    ? DEFAULT_URL_PATTERNS
+                    : cidWebProperties.getBean().getUrlPatterns()
         );
 
         return filterRegBean;
@@ -96,9 +96,9 @@ public class CidWebSpringAutoConfiguration {
         );
 
         filterRegBean.setUrlPatterns(
-                mdcFilterRegBeanProperties.getUrlPatterns().isEmpty() ?
-                        DEFAULT_URL_PATTERNS :
-                        mdcFilterRegBeanProperties.getUrlPatterns()
+                mdcFilterRegBeanProperties.getUrlPatterns().isEmpty()
+                    ? DEFAULT_URL_PATTERNS
+                    : mdcFilterRegBeanProperties.getUrlPatterns()
         );
 
         return filterRegBean;

@@ -3,7 +3,7 @@
 
     <groupId>com.spt-development</groupId>
     <artifactId>spt-development-cid-web-spring-boot</artifactId>
-    <version>3.2.5-SNAPSHOT</version>
+    <version>3.2.4-SNAPSHOT</version>
 
     <name>cid-web-spring-boot</name>
     <description>Library for integrating spt-development/spt-development-cid-web into a Spring Boot application.</description>

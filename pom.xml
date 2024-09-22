@@ -40,9 +40,9 @@
         <maven.min.version>3.9.4</maven.min.version>
 
         <!-- Dependency versions -->
-        <spring-boot.version>3.3.3</spring-boot.version>
+        <spring-boot.version>3.3.4</spring-boot.version>
         <spt-cid.version>2.0.14</spt-cid.version>
-        <spt-cid-web.version>2.0.18</spt-cid-web.version>
+        <spt-cid-web.version>2.0.19</spt-cid-web.version>
 
         <!-- Plugin versions -->
         <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
@@ -62,8 +62,8 @@
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.5.0</maven-surefire-plugin.version>
         <nexus-staging-plugin.version>1.7.0</nexus-staging-plugin.version>
-        <pitest-maven.version>1.16.3</pitest-maven.version>
-        <spotbugs.version>4.8.6.3</spotbugs.version>
+        <pitest-maven.version>1.17.0</pitest-maven.version>
+        <spotbugs.version>4.8.6.4</spotbugs.version>
         <versions-maven-plugin.version>2.17.1</versions-maven-plugin.version>
 
         <!-- Plugin dependencies -->
